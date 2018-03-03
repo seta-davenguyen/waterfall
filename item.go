@@ -84,8 +84,6 @@ func GetProducts(session *mgo.Session) gin.HandlerFunc {
 			})
 		}
 
-		log.Println("idcat int ", idcat, limit, skip)
-
 		err = items.Find(bson.M{"idcat": idcat, "status": bson.M{"$lt": 4}}).Sort("status", "createddate").Limit(limit).Skip(skip).All(&allItems)
 		//err := items.Find(nil).Limit(limit).Skip(skip).All(&allItems)
 
@@ -133,8 +131,6 @@ func GetProductCs(session *mgo.Session) gin.HandlerFunc {
 				"error": INVALID_PARAM,
 			})
 		}
-
-		log.Println("idcat int ", idcat, limit, skip)
 
 		err = items.Find(nil).Sort("timec").Limit(limit).Skip(skip).All(&allItems)
 
