@@ -1,2 +1,2 @@
 # waterfall
-go restfull api for react native app
+go restfull api with GIN and Mongo for react native app
