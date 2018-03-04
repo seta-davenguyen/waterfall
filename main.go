@@ -23,7 +23,8 @@ func main() {
 
 	router := gin.New()
 	//use LoggerInfo instead Logger to include userID in request log
-	router.Use(gin.LoggerInfo("userID"))
+	//router.Use(gin.LoggerInfo("userID"))
+	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
 	router.POST("/login", LoginHandle(session))
