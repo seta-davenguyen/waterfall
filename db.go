@@ -9,7 +9,7 @@ import (
 
 func CreateSession() *mgo.Session {
 	session, err := mgo.DialWithInfo(&mgo.DialInfo{
-		Addrs:    []string{"127.0.0.1"},
+		Addrs:    []string{"127.0.0.1:27017"},
 		Username: "",
 		Password: "",
 		Timeout:  60 * time.Second,
